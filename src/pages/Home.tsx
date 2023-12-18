@@ -1,4 +1,3 @@
-
 import useStoreHook from '../hooks/useStoreHook';
 
 function Home() {
