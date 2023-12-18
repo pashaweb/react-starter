@@ -1,8 +1,8 @@
-import useStoreHook from '../hooks/useStoreHook';
+import { Link } from 'react-router-dom';
+import { useVolStore } from '../store/store';
 
 function Home() {
-  const { vulnerabilities } = useStoreHook();
-
+  const { vulnerabilities } = useVolStore();
   return (
     <table>
       <thead>
@@ -18,7 +18,7 @@ function Home() {
             <td>{vulnerability.ip}</td>
             <td>{vulnerability.vulnerabilities.length}</td>
             <td>
-              <button type="button">View</button>
+              <Link to={`/info/${vulnerability.ip}`}>Info</Link>
             </td>
           </tr>
         ))}
